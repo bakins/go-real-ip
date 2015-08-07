@@ -72,8 +72,7 @@ func TestHandlerFail(t *testing.T) {
 	h.Equals(t, "9.8.8.8:9876", request.RemoteAddr)
 }
 
-func ExampleHandler() {
-
+func ExampleNew() {
 	// simple handler
 	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
 		// realip will rewrite RemoteAddr

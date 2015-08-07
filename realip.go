@@ -1,3 +1,6 @@
+// Package realip mimics the nginx realip module.
+// It rewrites RemoteAddr in an http.Request when the
+// connection is from a trusted network.
 package realip
 
 import (
@@ -9,6 +12,7 @@ import (
 
 var errBadIP = errors.New("invalid ip address")
 
+// RealIP is used to override RemoteAddr for net/http.
 type RealIP struct {
 	allowed []*net.IPNet
 	headers []string
